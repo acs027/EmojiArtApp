@@ -36,6 +36,10 @@ class EmojiArtDocument: ObservableObject {
         emojiArt.addEmoji(emoji, at: position, size: Int(size))
     }
     
+    func removeEmoji(withEmojiId id: Emoji.ID) {
+        emojiArt.removeEmoji(withEmojiId: id)
+    }
+    
     func move(_ emoji: Emoji, by offset: CGOffset) {
         let existingPosition = emojiArt[emoji].position
         emojiArt[emoji].position = Emoji.Position(
